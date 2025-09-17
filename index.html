@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Flujo de Trabajo Tasador Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #EE9B00;
+        }
+        .step-number {
+            background-color: #005F73;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-[#F0F8FF]">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-12">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#005F73] mb-2">Flujo de Trabajo: Tasador Express con IA y No-Code</h1>
+            <p class="text-lg text-[#0A9396]">Una guía visual para construir una herramienta de valoración inmobiliaria inteligente.</p>
+        </header>
+
+        <main class="space-y-8">
+
+            <section id="step1" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#005F73]">Identificación del Problema y Usuario</h2>
+                        <p class="text-[#0A9396]">Todo gran proyecto comienza respondiendo: ¿qué necesidad resolvemos y para quién?</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                    <div class="bg-[#94D2BD] bg-opacity-20 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-[#005F73] mb-2">Necesidad Principal</h3>
+                        <p class="text-3xl font-bold text-[#CA6702]">🎯</p>
+                        <p class="mt-2 text-gray-700">Estimar el valor de una propiedad de forma rápida, objetiva y justificada con datos del mercado actual.</p>
+                    </div>
+                    <div class="bg-[#E9D8A6] bg-opacity-30 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-[#005F73] mb-2">Usuarios Clave</h3>
+                        <div class="flex justify-around items-center mt-4">
+                            <div>
+                                <p class="text-3xl font-bold text-[#CA6702]">👤</p>
+                                <p class="mt-2 font-semibold text-gray-700">Propietarios</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-[#CA6702]">👔</p>
+                                <p class="mt-2 font-semibold text-gray-700">Agentes Inmobiliarios</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step2" class="bg-white rounded-xl shadow-lg p-6 md:p-8 md:col-span-2">
+                 <div class="flex items-start gap-4 mb-6">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#005F73]">Diseño del Flujo de Datos y Lógica Base</h2>
+                        <p class="text-[#0A9396]">Se define cómo la información se mueve y procesa, usando una hoja de cálculo como el cerebro del sistema.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                    <div class="w-full md:w-1/4 p-4 bg-blue-100 rounded-lg shadow">
+                        <h3 class="font-bold text-[#005F73]">INPUTS 📥</h3>
+                        <p class="text-sm text-gray-600">m², precio, ubicación, tipo</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">→</div>
+                    <div class="flow-arrow md:hidden">↓</div>
+                    <div class="w-full md:w-1/2 p-4 bg-green-100 rounded-lg shadow">
+                        <h3 class="font-bold text-[#005F73]">PROCESAMIENTO ⚙️</h3>
+                        <p class="text-sm text-gray-600">Cálculo de precio/m², filtrado, análisis estadístico</p>
+                    </div>
+                     <div class="flow-arrow hidden md:block">→</div>
+                     <div class="flow-arrow md:hidden">↓</div>
+                    <div class="w-full md:w-1/4 p-4 bg-orange-100 rounded-lg shadow">
+                        <h3 class="font-bold text-[#005F73]">OUTPUT 📤</h3>
+                        <p class="text-sm text-gray-600">Recomendación de precio, texto justificativo</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                    <div>
+                         <h3 class="text-xl font-semibold text-[#005F73] mb-2 text-center">Componentes del Procesamiento</h3>
+                         <div class="chart-container h-64 md:h-80"><canvas id="processingChart"></canvas></div>
+                         <p class="text-center text-sm text-gray-600 mt-2">El análisis estadístico y el filtrado de datos son cruciales para obtener un resultado preciso y fiable.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#005F73] mb-2 text-center">Plataformas para la Lógica</h3>
+                        <div class="chart-container h-64 md:h-80"><canvas id="platformsChart"></canvas></div>
+                        <p class="text-center text-sm text-gray-600 mt-2">Google Sheets destaca por su flexibilidad y facilidad de integración con otras herramientas no-code.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <section id="step4" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#005F73]">Diseño del Prompt de IA</h2>
+                            <p class="text-[#0A9396]">Se traduce la lógica de negocio a un lenguaje que la IA pueda entender para generar un reporte de valor.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-[#005F73] mb-2 text-center">Componentes de un Prompt Efectivo</h3>
+                    <div class="chart-container"><canvas id="promptChart"></canvas></div>
+                    <p class="text-center text-sm text-gray-600 mt-2">Un prompt bien equilibrado debe definir claramente el rol, contexto, tarea, estilo y canal de salida para la IA.</p>
+                </section>
+
+                <section id="step5" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-[#005F73]">Integración con Plataformas No-Code</h2>
+                            <p class="text-[#0A9396]">Se conecta la lógica y la IA a una interfaz amigable para que el usuario final pueda interactuar con la herramienta.</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-[#005F73] mb-2 text-center">Tipos de Herramientas No-Code</h3>
+                    <div class="chart-container"><canvas id="nocodeChart"></canvas></div>
+                    <p class="text-center text-sm text-gray-600 mt-2">La elección de la herramienta depende de si se busca crear una app completa, un formulario o un dashboard.</p>
+                </section>
+            </div>
+            
+            <section id="step6" class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <div class="flex items-start gap-4 mb-4">
+                     <div class="step-number">5</div>
+                     <div>
+                        <h2 class="text-2xl font-bold text-[#005F73]">Validación y Mejora Iterativa</h2>
+                        <p class="text-[#0A9396]">El ciclo de feedback es fundamental para refinar la herramienta y asegurar que realmente resuelve la necesidad del usuario.</p>
+                    </div>
+                </div>
+                <div class="relative flex flex-col items-center justify-center p-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="p-4 bg-blue-100 rounded-lg">
+                            <span class="text-3xl">🚀</span>
+                            <p class="font-semibold mt-2">Probar</p>
+                        </div>
+                        <div class="p-4 bg-green-100 rounded-lg">
+                            <span class="text-3xl">💬</span>
+                            <p class="font-semibold mt-2">Obtener Feedback</p>
+                        </div>
+                        <div class="p-4 bg-yellow-100 rounded-lg">
+                             <span class="text-3xl">🔧</span>
+                            <p class="font-semibold mt-2">Ajustar Lógica/IA</p>
+                        </div>
+                         <div class="p-4 bg-purple-100 rounded-lg">
+                             <span class="text-3xl">🔁</span>
+                            <p class="font-semibold mt-2">Repetir</p>
+                        </div>
+                    </div>
+                     <div class="absolute top-1/2 left-0 w-full h-1 flex items-center justify-center -translate-y-1/2 -z-10 hidden md:flex">
+                        <div class="w-10/12 border-t-4 border-dashed border-[#EE9B00]"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="text-center pt-8">
+                <h2 class="text-3xl font-bold text-[#005F73] mb-4">La IA como Motor de Decisiones</h2>
+                <div class="flex justify-center items-center space-x-2 md:space-x-6 text-lg text-gray-700">
+                    <span>💡 Tú defines la lógica</span>
+                    <span class="text-2xl text-[#CA6702]">+</span>
+                    <span>🧮 La hoja de cálculo procesa</span>
+                    <span class="text-2xl text-[#CA6702]">+</span>
+                    <span>🤖 La IA comunica</span>
+                    <span class="text-2xl text-[#CA6702]">+</span>
+                    <span>📱 La app no-code entrega</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const wrapLabel = (str, maxWidth) => {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const defaultTooltipConfig = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const palette = {
+                blueDark: '#005F73',
+                blueMid: '#0A9396',
+                teal: '#94D2BD',
+                yellow: '#E9D8A6',
+                orangeMid: '#EE9B00',
+                orangeDark: '#CA6702',
+                red: '#AE2012'
+            };
+
+            const processingCtx = document.getElementById('processingChart').getContext('2d');
+            new Chart(processingCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Análisis Estadístico', 'Filtrado de Datos', 'Detección de Atípicos', 'Cálculo Base (precio/m²)'],
+                    datasets: [{
+                        data: [40, 30, 20, 10],
+                        backgroundColor: [palette.blueMid, palette.teal, palette.orangeMid, palette.blueDark],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        ...defaultTooltipConfig.plugins
+                    }
+                }
+            });
+
+            const platformsCtx = document.getElementById('platformsChart').getContext('2d');
+            new Chart(platformsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Google Sheets', 'Airtable', 'Microsoft Excel'],
+                    datasets: [{
+                        label: 'Flexibilidad y Facilidad de Integración',
+                        data: [90, 80, 65],
+                        backgroundColor: [palette.blueDark, palette.blueMid, palette.teal],
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                       x: {
+                           beginAtZero: true,
+                           max: 100
+                       }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        ...defaultTooltipConfig.plugins
+                    }
+                }
+            });
+            
+            const promptCtx = document.getElementById('promptChart').getContext('2d');
+            new Chart(promptCtx, {
+                type: 'radar',
+                data: {
+                    labels: [['Canal de', 'Salida'], 'Estilo y Audiencia', 'Tarea', 'Contexto', 'Rol del Asistente'],
+                    datasets: [{
+                        label: 'Componente',
+                        data: [85, 90, 95, 90, 80],
+                        fill: true,
+                        backgroundColor: 'rgba(148, 210, 189, 0.4)',
+                        borderColor: palette.blueMid,
+                        pointBackgroundColor: palette.blueMid,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: palette.blueMid
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            ticks: {
+                                backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                color: '#666'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                           display: false
+                        },
+                         ...defaultTooltipConfig.plugins
+                    }
+                }
+            });
+
+            const nocodeCtx = document.getElementById('nocodeChart').getContext('2d');
+            new Chart(nocodeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['App Builders', 'Formularios Inteligentes', 'Dashboards'],
+                    datasets: [{
+                        label: 'Glide / Softr',
+                        data: [100, 0, 0],
+                        backgroundColor: palette.blueDark,
+                        stack: 'Stack 0',
+                      }, {
+                        label: 'Tally / Google Forms',
+                        data: [0, 100, 0],
+                        backgroundColor: palette.blueMid,
+                        stack: 'Stack 0',
+                      }, {
+                        label: 'Notion + Make',
+                        data: [0, 0, 100],
+                        backgroundColor: palette.teal,
+                        stack: 'Stack 0',
+                      }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        ...defaultTooltipConfig.plugins
+                    },
+                    scales: {
+                        x: { stacked: true, display: false },
+                        y: { stacked: true }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
